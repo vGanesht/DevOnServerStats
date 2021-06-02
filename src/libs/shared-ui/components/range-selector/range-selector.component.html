@@ -1,0 +1,20 @@
+<mat-chip (click)="openDialog()">
+    <div style="display:flex;justify-content: space-between;align-items: center;width: 100%;">
+        <div>
+            {{storageLabel}}
+        </div>
+        <div>
+            <mat-icon class="" *ngIf="!popupopen">
+                <span class="material-icons-outlined">
+                keyboard_arrow_down
+                </span>
+            </mat-icon>
+            <mat-icon *ngIf="popupopen" >
+                <span class="material-icons-outlined">
+                    keyboard_arrow_up
+                </span>
+            </mat-icon>
+        </div>
+   
+        </div>
+</mat-chip>

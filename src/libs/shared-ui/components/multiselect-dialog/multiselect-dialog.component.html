@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>
+    <label class="text-bold">Select Ram </label></h2>
+<div mat-dialog-content>
+    <div class="list-container">  
+        <mat-selection-list [(ngModel)]="selectedValues" #listItemsa >
+            <mat-list-option *ngFor="let ram of list" [value]="ram">
+            {{ram}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+ </div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" >Cancel</button>
+  <button mat-button (click)="saveSelectedItems()" >Apply</button>
+</div>
+
+
+<!-- Copyright 2021 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

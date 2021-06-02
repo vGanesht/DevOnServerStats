@@ -1,0 +1,30 @@
+<app-filters [locationList]="locationList" (filterData)="handleFilters($event)"></app-filters>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef> Model </th>
+        <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+      </ng-container>
+      <ng-container matColumnDef="ram"> 
+          <th mat-header-cell *matHeaderCellDef> RAM </th>
+          <td mat-cell *matCellDef="let element"> {{element.ram.memory}}{{element.ram.unit}} / {{element.ram.type}}</td>
+        </ng-container>
+        <ng-container matColumnDef="hdd">
+          <th mat-header-cell *matHeaderCellDef> HDD </th>
+          <td mat-cell *matCellDef="let element"> {{element.hdd.memory}}{{element.hdd.unit}} / {{element.hdd.type}} / {{element.hdd.count}} units </td>
+        </ng-container>
+        <ng-container matColumnDef="location">
+          <th mat-header-cell *matHeaderCellDef> Location</th>
+          <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element">{{element.price.currencySymbol}} {{element.price.amountCents}} </td>
+        </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> 
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+   
+</div>

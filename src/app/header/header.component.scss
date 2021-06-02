@@ -1,0 +1,21 @@
+.header-container{
+    height:78px;
+}
+.inner-container{
+    display:flex;
+    padding: 20px;
+    justify-content:space-between;
+    background: #1e2761;
+}
+
+.logo{
+    width:200px;
+    margin: 10px;
+}
+
+.logo-container {
+    font-size:25px;
+    line-height:1em;
+    color:white;
+    font-weight:600;
+}
