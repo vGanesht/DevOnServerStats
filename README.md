@@ -3,7 +3,7 @@
 This project was generated for test to demonstrate some of features with Angular
 
 ## Installation
-Run npm install to install the npm packages described in the package.json and verify that it works:
+Run `npm install` to install the npm packages described in the package.json and verify that it works:
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
