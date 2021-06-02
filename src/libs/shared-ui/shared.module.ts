@@ -24,6 +24,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RangeDialogComponent } from './components/range-dialog/range-dialog.component';
 import { CustomMultiselectComponent } from './components/custom-multiselect/custom-multiselect.component';
 import { MultiselectDialogComponent } from './components/multiselect-dialog/multiselect-dialog.component';
+import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 
 const MATERIAL_MODULES=[
   MatButtonModule,
@@ -48,7 +49,7 @@ const MATERIAL_MODULES=[
 
 const ANGULAR_MODULES=[FormsModule,ReactiveFormsModule];
 
-const SHARED_COMPONENTS=[ NotFoundErrorComponent,RangeSelectorComponent,CustomMultiselectComponent ];
+const SHARED_COMPONENTS=[ NotFoundErrorComponent,RangeSelectorComponent,CustomMultiselectComponent,CustomSelectComponent];
 
 const DIALOG_COMPONENTS=[RangeDialogComponent,MultiselectDialogComponent];
 

@@ -59,6 +59,11 @@ export class FiltersComponent implements OnInit {
     this.filterDetails.ram=val.ram;
     this.updateFilter();
   }
+  handleDropdownChange(val,key)
+  {
+    this.filterDetails[key]=val;
+    this.updateFilter();
+  }
   resetFilters()
   {
     this.filterDetails={
@@ -69,4 +74,5 @@ export class FiltersComponent implements OnInit {
     }
     this.updateFilter();
   }
+  
 }

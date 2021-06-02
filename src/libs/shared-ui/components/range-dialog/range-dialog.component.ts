@@ -18,7 +18,6 @@ export class RangeDialogComponent implements OnInit {
   ngOnInit(): void {
     this.storageDetails = this.data.storageDetails;
     this.storage=this.data.selectedvalue;
-    debugger;
     this.sliderValue=this.data.selectedvalue!=0?Math.floor(this.storageDetails.indexOf(this.data.selectedvalue)*100/this.storageDetails.length):0;
   }
 

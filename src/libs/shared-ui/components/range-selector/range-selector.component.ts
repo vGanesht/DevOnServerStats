@@ -19,8 +19,7 @@ export class RangeSelectorComponent implements OnInit {
   }
   
   ngOnChanges(): void {
-    debugger;
-   if(!this.selectedValue || this.selectedValue =='')
+    if(!this.selectedValue || this.selectedValue =='')
     {
       this.storageLabel='Storage Range';
     }
@@ -29,7 +28,6 @@ export class RangeSelectorComponent implements OnInit {
     }
   }
   openDialog() {
-    debugger;
     this.popupopen=true;
     const dialogRef = this.dialog.open(RangeDialogComponent,
       {

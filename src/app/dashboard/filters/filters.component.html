@@ -6,16 +6,15 @@
         <div>
             <mat-chip-list >
                 <shared-range-selector [storageDetails]="storageDetails" [selectedValue]="filterDetails?.storage" (selectedStorage)="handleSlider($event)" ></shared-range-selector>
+                <shared-custom-multiselect [ramList]="RAMList" [selectedValue]="filterDetails?.ram" (selectedRam)="handleRamChange($event)" ></shared-custom-multiselect>
+                <shared-custom-select [label]="'Select HDD'" [list]="HDDList" [selectedValue]="filterDetails?.hdd" (selected)="handleDropdownChange($event,'hdd')" ></shared-custom-select>
+                <shared-custom-select [label]="'Select Location'" [list]="locationList" [selectedValue]="filterDetails?.location" (selected)="handleDropdownChange($event,'location')" ></shared-custom-select>
             </mat-chip-list>
            
         </div>
         <div>
-            <mat-chip-list >
-                <shared-custom-multiselect [ramList]="RAMList" [selectedValue]="filterDetails?.ram" (selectedRam)="handleRamChange($event)" ></shared-custom-multiselect>
-            </mat-chip-list>
-           
+            <button mat-raised-button color="warn" (click)="resetFilters()">RESET</button>
         </div>
-       
         <!-- <div class="storage-container" >
             <div class="storage-label">
                 <label class="text-bold">Storage</label>
@@ -39,7 +38,7 @@
                 </mat-select>
          </mat-form-field>
         </div> -->
-        <div>
+        <!-- <div>
             <mat-form-field appearance="fill">
                 <mat-label>Select HDD</mat-label>
                 <mat-select (selectionChange)="updateFilter()" [(value)]="filterDetails.hdd">
@@ -59,10 +58,10 @@
                       </mat-option>
                 </mat-select>
               </mat-form-field>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <button mat-raised-button color="warn" (click)="resetFilters()">RESET</button>
-        </div>
+        </div> -->
         
     </div>
     

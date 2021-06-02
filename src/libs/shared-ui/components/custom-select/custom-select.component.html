@@ -1,0 +1,29 @@
+<mat-chip [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (click)="menuTrigger.openMenu()">
+    <div style="display:flex;justify-content: space-between;align-items: center;width: 100%;">
+        <div style="overflow: hidden;">
+            {{Currentlabel}}
+        </div>
+        <div>
+            <mat-icon class="" *ngIf="!popupopen">
+                <span class="material-icons-outlined">
+                keyboard_arrow_down
+                </span>
+            </mat-icon>
+            <mat-icon *ngIf="popupopen" >
+                <span class="material-icons-outlined">
+                    keyboard_arrow_up
+                </span>
+            </mat-icon>
+        </div>
+   
+        </div>
+</mat-chip>
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <ul (mouseleave)="menuTrigger.closeMenu()">
+        <li *ngFor="let item of list">
+            <button mat-menu-item (click)="updateValue(item)">
+                <span>{{ item }}</span>
+            </button>
+        </li>
+    </ul>
+  </mat-menu>
