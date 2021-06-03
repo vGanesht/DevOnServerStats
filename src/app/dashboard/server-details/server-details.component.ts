@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { of } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { ServerDataService } from '../server-data.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class ServerDetailsComponent implements OnInit  {
    displayedColumns: string[] = ['model', 'ram', 'hdd', 'location','price'];
    dataSource:any;
    locationList:string[];
+   private serverSubscription: Subscription;
    @ViewChild(MatPaginator) paginator : MatPaginator;
 
    constructor(private _serverDataService:ServerDataService) { 
@@ -28,7 +30,7 @@ export class ServerDetailsComponent implements OnInit  {
    initdata()
    {
       this.isLoading=true;
-      this._serverDataService.getServers().subscribe((x:any)=>{
+      this.serverSubscription=this._serverDataService.getServers().subscribe((x:any)=>{
          this.dataSource = new MatTableDataSource<any>(x.servers);
          this.dataSource.paginator = this.paginator;
         
@@ -41,10 +43,15 @@ export class ServerDetailsComponent implements OnInit  {
   }
   handleFilters(data){
    this.isLoading=true;
-   this._serverDataService.getFilteredServers(data).subscribe((x:any)=>{
+   this.serverSubscription?.unsubscribe();
+   this.serverSubscription=this._serverDataService.getFilteredServers(data).subscribe((x:any)=>{
       this.dataSource = new MatTableDataSource<any>(x.servers);
       this.dataSource.paginator = this.paginator;
       this.isLoading=false;
    });
   }
+
+   ngOnDestroy(){
+      this.serverSubscription?.unsubscribe();
+   }
 }

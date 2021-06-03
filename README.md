@@ -1,6 +1,6 @@
-# ServerStats
+# lw-assignment
 
-This project was generated for test to demonstrate some of features with Angular
+This project was generated for assignment to demonstrate some of features with Angular
 
 ## Installation
 Run `npm install` to install the npm packages described in the package.json and verify that it works:
