@@ -20,7 +20,6 @@ describe('RangeDialogComponent', () => {
       ],
       providers: [
         {
-          // I was expecting this will pass the desired value
           provide: MAT_DIALOG_DATA,
           useValue: testMatData
         },

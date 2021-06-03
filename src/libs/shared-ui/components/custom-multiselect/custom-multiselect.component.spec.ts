@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { CustomMultiselectComponent } from './custom-multiselect.component';
 
@@ -14,7 +14,8 @@ describe('CustomMultiselectComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ CustomMultiselectComponent ],
       providers: [
-        { provide: MatDialog, useClass: class {} }
+        { provide: MatDialog, useClass: class {} },
+        { provide: MatDialogRef, useClass: class {} }
       ]
     })
     .compileComponents();
@@ -34,11 +35,11 @@ describe('CustomMultiselectComponent', () => {
 });
 @Component({
   template: ` <shared-custom-multiselect
-      [ramList]="RAM_SPECS_LIST"
-      [selectedValue]="selectedValue" >
-    </shared-custom-multiselect>`
+    [ramList]="test_LIST"
+    [selectedValue]="selectedValue">
+  </shared-custom-multiselect>`
 })
 export class TestComponent{
-  RAM_SPECS_LIST= ['2GB', '4GB', '8GB', '12GB', '16GB', '24GB', '32GB', '48GB', '64GB', '96GB'];
+  test_LIST= ['2GB', '4GB', '8GB', '12GB', '16GB', '24GB', '32GB', '48GB', '64GB', '96GB'];
   selectedValue="2GB";
 }
