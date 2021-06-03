@@ -1,4 +1,6 @@
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { CustomSelectComponent } from './custom-select.component';
 
@@ -8,6 +10,7 @@ describe('CustomSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatMenuModule],
       declarations: [ CustomSelectComponent ]
     })
     .compileComponents();
@@ -19,7 +22,19 @@ describe('CustomSelectComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
+@Component({
+  template: `<shared-custom-select
+      [label]="testLabel"
+      [list]="Test_LIST"
+      [selectedValue]="filterDetails?.hdd" >
+    </shared-custom-select>`
+})
+export class RangeSelectorTestComponent{
+  testLabel="Select Data"
+  Test_LIST=['SAS', 'SATA', 'SSD'];
+  selectedValue='SAS';
+}

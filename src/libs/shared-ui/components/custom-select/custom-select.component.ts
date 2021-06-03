@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MultiselectDialogComponent } from '../multiselect-dialog/multiselect-dialog.component';
 
 @Component({
   selector: 'shared-custom-select',
@@ -14,7 +12,7 @@ export class CustomSelectComponent implements OnInit ,OnChanges{
   @Output() selected =new EventEmitter<any>();
   Currentlabel='Select HDD';
   popupopen=false;
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
   
   ngOnChanges(): void {
    if(!this.selectedValue || this.selectedValue =='')
