@@ -7,7 +7,7 @@ describe('MultiselectDialogComponent', () => {
   let component: MultiselectDialogComponent;
   let fixture: ComponentFixture<MultiselectDialogComponent>;
   const testMatData = {
-    list:[], selectedvalue:''
+    list: [], selectedvalue: ''
   };
 
   beforeEach(async () => {

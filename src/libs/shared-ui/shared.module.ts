@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NotFoundErrorComponent } from './components/not-found-error/not-found-error.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,12 +26,12 @@ import { CustomMultiselectComponent } from './components/custom-multiselect/cust
 import { MultiselectDialogComponent } from './components/multiselect-dialog/multiselect-dialog.component';
 import { CustomSelectComponent } from './components/custom-select/custom-select.component';
 
-const MATERIAL_MODULES=[
+const MATERIAL_MODULES = [
   MatButtonModule,
   MatMenuModule,
   MatCardModule,
   MatToolbarModule,
-  MatIconModule,  
+  MatIconModule,
   MatSidenavModule,
   MatListModule,
   MatTableModule,
@@ -47,11 +47,11 @@ const MATERIAL_MODULES=[
   MatProgressSpinnerModule
 ];
 
-const ANGULAR_MODULES=[FormsModule,ReactiveFormsModule];
+const ANGULAR_MODULES = [FormsModule, ReactiveFormsModule];
 
-const SHARED_COMPONENTS=[ NotFoundErrorComponent,RangeSelectorComponent,CustomMultiselectComponent,CustomSelectComponent];
+const SHARED_COMPONENTS = [ NotFoundErrorComponent, RangeSelectorComponent, CustomMultiselectComponent, CustomSelectComponent];
 
-const DIALOG_COMPONENTS=[RangeDialogComponent,MultiselectDialogComponent];
+const DIALOG_COMPONENTS = [RangeDialogComponent, MultiselectDialogComponent];
 
 @NgModule({
   declarations: [...SHARED_COMPONENTS, ...DIALOG_COMPONENTS],

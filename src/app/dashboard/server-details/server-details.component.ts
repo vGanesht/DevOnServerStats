@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { of } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ServerDataService } from '../server-data.service';
 
@@ -11,47 +10,46 @@ import { ServerDataService } from '../server-data.service';
   styleUrls: ['./server-details.component.scss']
 })
 
-export class ServerDetailsComponent implements OnInit  {
-   isLoading=false;
-   displayedColumns: string[] = ['model', 'ram', 'hdd', 'location','price'];
-   dataSource:any;
-   locationList:string[];
+export class ServerDetailsComponent implements OnInit, OnDestroy  {
+   isLoading = false;
+   displayedColumns: string[] = ['model', 'ram', 'hdd', 'location', 'price'];
+   dataSource: any;
+   locationList: string[];
    private serverSubscription: Subscription;
-   @ViewChild(MatPaginator) paginator : MatPaginator;
+   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-   constructor(private _serverDataService:ServerDataService) { 
+   constructor(private serverDataService: ServerDataService) {
       this.dataSource = new MatTableDataSource<any>();
    }
 
    ngOnInit(): void {
-      this.initdata();
+      this.initData();
    }
 
-   initdata()
+   initData(): void
    {
-      this.isLoading=true;
-      this.serverSubscription=this._serverDataService.getServers().subscribe((x:any)=>{
-         this.dataSource = new MatTableDataSource<any>(x.servers);
+      this.isLoading = true;
+      this.serverSubscription = this.serverDataService.getServers().subscribe((result: any) => {
+         this.dataSource = new MatTableDataSource<any>(result.servers);
          this.dataSource.paginator = this.paginator;
-        
-         let arr=x.servers.map((x)=>{
-            return x.location;
+         const arr = result.servers.map((res) => {
+            return res.location;
          });
-         this.locationList=Array.from(new Set(arr));
-         this.isLoading=false;
+         this.locationList = Array.from(new Set(arr));
+         this.isLoading = false;
       });
-  }
-  handleFilters(data){
-   this.isLoading=true;
-   this.serverSubscription?.unsubscribe();
-   this.serverSubscription=this._serverDataService.getFilteredServers(data).subscribe((x:any)=>{
-      this.dataSource = new MatTableDataSource<any>(x.servers);
-      this.dataSource.paginator = this.paginator;
-      this.isLoading=false;
-   });
-  }
+   }
 
-   ngOnDestroy(){
+   handleFilters(data): void {
+      this.isLoading = true;
+      this.serverSubscription?.unsubscribe();
+      this.serverSubscription = this.serverDataService.getFilteredServers(data).subscribe((result: any) => {
+         this.dataSource = new MatTableDataSource<any>(result.servers);
+         this.dataSource.paginator = this.paginator;
+         this.isLoading = false;
+      });
+   }
+   ngOnDestroy(): void {
       this.serverSubscription?.unsubscribe();
    }
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,45 +8,45 @@ import { environment } from 'src/environments/environment';
 })
 
 export class ServerDataService {
-  server_url='api/servers';
+  serverUrl = 'api/servers';
 
   constructor(private httpClient: HttpClient) { }
 
-  getServers(){
-    return this.httpClient.get(environment.BASE_URL+this.server_url);
+  getServers(): Observable<any> {
+    return this.httpClient.get(environment.BASE_URL + this.serverUrl);
   }
-  getFilteredServers(data){
-   let url=`${environment.BASE_URL}${this.server_url}${this.formquery(data)}`;
+  getFilteredServers(data): Observable<any> {
+   const url = `${environment.BASE_URL}${this.serverUrl}${this.formquery(data)}`;
    return this.httpClient.get(url);
   }
-  formquery(data)
+  formquery(data): string
   {
-    let query='?storageMin=0';
-    query+=(data.storage?.length)?`&storageMax=${this.processStorageInfo(data.storage)}`:'';
-    query+=(data.ram?.length>0)?`&ram=${this.formRamParams(data.ram)}`:'';
-    query+=(data.hdd)?`&hdd=${data.hdd}`:'';
-    query+=(data.location)?`&location=${data.location}`:'';
+    let query = '?storageMin=0';
+    query += (data.storage?.length) ? `&storageMax=${this.processStorageInfo(data.storage)}` : '';
+    query += (data.ram?.length > 0) ? `&ram=${this.formRamParams(data.ram)}` : '';
+    query += (data.hdd) ? `&hdd=${data.hdd}` : '';
+    query += (data.location) ? `&location=${data.location}` : '';
     return query;
   }
 
-  formRamParams(data)
+  formRamParams(data): string
   {
-    let a= data.map((x)=>
-    { 
+    const a = data.map((x) =>
+    {
       return this.getNumber(x);
     });
     return a.join(',');
   }
 
-  processStorageInfo(storage)
+  processStorageInfo(storage): string
   {
-    return storage.includes("GB")? this.getNumber(storage):(this.getNumber(storage)*1000);
+    return storage.includes('GB') ? this.getNumber(storage) : (this.getNumber(storage) + '000');
   }
 
-  getNumber(x)
+  getNumber(storage): string
   {
-    var numb = x.match(/\d/g);
-    numb = numb.join("");
+    let numb = storage.match(/\d/g);
+    numb = numb.join('');
     return numb;
   }
 }

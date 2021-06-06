@@ -5,18 +5,18 @@ import { ServerDetailsComponent } from './server-details/server-details.componen
 
 
 const routes: Routes = [
-  { 
-    path:'server',
+  {
+    path: 'server',
     component: DashboardContainerComponent,
     children: [
       {
         path: 'server-details',
         component: ServerDetailsComponent,
       },
-      { path:'', redirectTo: 'server-details', pathMatch: 'full' },
+      { path: '', redirectTo: 'server-details', pathMatch: 'full' },
     ],
   },
-  { path:'', redirectTo: 'server', pathMatch: 'full' },
+  { path: '', redirectTo: 'server', pathMatch: 'full' },
 ];
 
 @NgModule({

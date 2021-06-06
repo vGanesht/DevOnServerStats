@@ -11,68 +11,68 @@ import { HDD_SPEC_LIST, RAM_SPECS_LIST, STORAGE_DETAILS } from './filter-constan
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
-  storageDetails=STORAGE_DETAILS;
-  // toppings = new FormControl();
+  storageDetails = STORAGE_DETAILS;
   RAMList: string[] = RAM_SPECS_LIST;
-  HDDList:string[]=HDD_SPEC_LIST;
-  someValue ="";
-
-  filterDetails={
-    storage:0,
-    ram:[],
-    hdd:null,
-    location:null
-  }
-  @Output() filterData =new EventEmitter<any>();
-  @Input() locationList:string[];
-  
+  HDDList: string[] = HDD_SPEC_LIST;
+  filterDetails = {
+    storage: 0,
+    ram: [],
+    hdd: null,
+    location: null
+  };
+  @Output() filterData = new EventEmitter<any>();
+  @Input() locationList: string[];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  updateFilter()
+  updateFilter(): void
   {
     this.filterData.emit(this.filterDetails);
   }
 
-  updateLocation(val){
-    this.filterDetails.location=val;
+  updateLocation(val): void {
+    this.filterDetails.location = val;
     this.updateFilter();
   }
 
-  updateHdd(val){
-    this.filterDetails.hdd=val;
+  updateHdd(val): void {
+    this.filterDetails.hdd = val;
     this.updateFilter();
   }
-  updateRam()
+
+  updateRam(): void
   {
     this.updateFilter();
   }
-  handleSlider(val){
-    this.filterDetails.storage=val.storage;
+
+  handleSlider(val): void{
+    this.filterDetails.storage = val.storage;
     this.updateFilter();
   }
-  handleRamChange(val)
+
+  handleRamChange(val): void
   {
-    this.filterDetails.ram=val.ram;
+    this.filterDetails.ram = val.ram;
     this.updateFilter();
   }
-  handleDropdownChange(val,key)
+
+  handleDropdownChange(val, key): void
   {
-    this.filterDetails[key]=val;
+    this.filterDetails[key] = val;
     this.updateFilter();
   }
-  resetFilters()
+
+  resetFilters(): void
   {
-    this.filterDetails={
-      storage:0,
-      ram:[],
-      hdd:null,
-      location:null
-    }
+    this.filterDetails = {
+      storage: 0,
+      ram: [],
+      hdd: null,
+      location: null
+    };
     this.updateFilter();
   }
-  
 }

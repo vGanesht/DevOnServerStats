@@ -6,9 +6,9 @@ import { RangeSelectorComponent } from './range-selector.component';
 
 describe('RangeSelectorComponent', () => {
   let component: RangeSelectorComponent;
-  let testComponent:RangeSelectorTestComponent;
+  let testComponent: RangeSelectorTestComponent;
   let fixture: ComponentFixture<RangeSelectorComponent>;
-  let testfixture:ComponentFixture<RangeSelectorTestComponent>;
+  let testfixture: ComponentFixture<RangeSelectorTestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,7 +24,7 @@ describe('RangeSelectorComponent', () => {
     testfixture = TestBed.createComponent(RangeSelectorTestComponent);
     fixture = TestBed.createComponent(RangeSelectorComponent);
     component = fixture.componentInstance;
-    testComponent=testfixture.componentInstance;
+    testComponent = testfixture.componentInstance;
     testfixture.detectChanges();
   });
 
@@ -35,12 +35,12 @@ describe('RangeSelectorComponent', () => {
 
 @Component({
   template: `<shared-range-selector
-    [storageDetails]="storageDetails" 
+    [storageDetails]="storageDetails"
     [selectedValue]="filterDetails?.storage"
      >
    </shared-range-selector>`
 })
 export class RangeSelectorTestComponent{
-  storageDetails=["0", "250GB", "500GB", "1TB", "2TB", "3TB", "4TB", "8TB", "12TB", "24TB", "48TB", "72TB"];;
-  selectedValue="0";
+  storageDetails = ['0', '250GB', '500GB', '1TB', '2TB', '3TB', '4TB', '8TB', '12TB', '24TB', '48TB', '72TB'];
+  selectedValue = '0';
 }

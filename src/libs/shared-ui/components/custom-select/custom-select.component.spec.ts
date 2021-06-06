@@ -29,12 +29,12 @@ describe('CustomSelectComponent', () => {
 @Component({
   template: `<shared-custom-select
       [label]="testLabel"
-      [list]="Test_LIST"
+      [list]="testList"
       [selectedValue]="filterDetails?.hdd" >
     </shared-custom-select>`
 })
 export class RangeSelectorTestComponent{
-  testLabel="Select Data"
-  Test_LIST=['SAS', 'SATA', 'SSD'];
-  selectedValue='SAS';
+  testLabel = 'Select Data';
+  testList = ['SAS', 'SATA', 'SSD'];
+  selectedValue = 'SAS';
 }

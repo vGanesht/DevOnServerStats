@@ -8,7 +8,7 @@ describe('RangeDialogComponent', () => {
   let component: RangeDialogComponent;
   let fixture: ComponentFixture<RangeDialogComponent>;
   const testMatData = {
-    storageDetails:[], selectedvalue:0
+    storageDetails: [], selectedvalue: 0
   };
 
   beforeEach(async () => {

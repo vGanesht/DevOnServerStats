@@ -6,9 +6,9 @@ import { CustomMultiselectComponent } from './custom-multiselect.component';
 
 describe('CustomMultiselectComponent', () => {
   let component: CustomMultiselectComponent;
-  let testComponent:TestComponent;
+  let testComponent: TestComponent;
   let fixture: ComponentFixture<CustomMultiselectComponent>;
-  let testfixture:ComponentFixture<TestComponent>;
+  let testfixture: ComponentFixture<TestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -25,7 +25,7 @@ describe('CustomMultiselectComponent', () => {
     testfixture = TestBed.createComponent(TestComponent);
     fixture = TestBed.createComponent(CustomMultiselectComponent);
     component = fixture.componentInstance;
-    testComponent=testfixture.componentInstance;
+    testComponent = testfixture.componentInstance;
     testfixture.detectChanges();
   });
 
@@ -35,11 +35,11 @@ describe('CustomMultiselectComponent', () => {
 });
 @Component({
   template: ` <shared-custom-multiselect
-    [ramList]="test_LIST"
+    [ramList]="testList"
     [selectedValue]="selectedValue">
   </shared-custom-multiselect>`
 })
 export class TestComponent{
-  test_LIST= ['2GB', '4GB', '8GB', '12GB', '16GB', '24GB', '32GB', '48GB', '64GB', '96GB'];
-  selectedValue="2GB";
+  testList = ['2GB', '4GB', '8GB', '12GB', '16GB', '24GB', '32GB', '48GB', '64GB', '96GB'];
+  selectedValue = '2GB';
 }

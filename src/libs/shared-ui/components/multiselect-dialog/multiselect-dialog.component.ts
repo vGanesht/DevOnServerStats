@@ -8,21 +8,21 @@ import { Inject } from '@angular/core';
   styleUrls: ['./multiselect-dialog.component.scss']
 })
 export class MultiselectDialogComponent implements OnInit {
-  list=[];
-  selectedValues=[];
+  list = [];
+  selectedValues = [];
   constructor(
     public dialogRef: MatDialogRef<MultiselectDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     this.list = this.data.list;
-    this.selectedValues=this.data.selectedvalue;
+    this.selectedValues = this.data.selectedvalue;
   }
-  
-  closeDialog() {
+
+  closeDialog(): void {
     this.dialogRef.close();
-  } 
-  saveSelectedItems()
+  }
+  saveSelectedItems(): void
   {
     this.dialogRef.close({ ram: this.selectedValues });
   }
