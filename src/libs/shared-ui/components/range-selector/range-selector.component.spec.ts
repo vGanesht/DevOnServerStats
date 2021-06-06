@@ -34,11 +34,11 @@ describe('RangeSelectorComponent', () => {
 });
 
 @Component({
-  template: `<shared-range-selector
+  template: `<lw-range-selector
     [storageDetails]="storageDetails"
     [selectedValue]="filterDetails?.storage"
      >
-   </shared-range-selector>`
+   </lw-range-selector>`
 })
 export class RangeSelectorTestComponent{
   storageDetails = ['0', '250GB', '500GB', '1TB', '2TB', '3TB', '4TB', '8TB', '12TB', '24TB', '48TB', '72TB'];

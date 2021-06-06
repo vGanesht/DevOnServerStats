@@ -3,7 +3,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
 @Component({
-  selector: 'shared-multiselect-dialog',
+  selector: 'lw-multiselect-dialog',
   templateUrl: './multiselect-dialog.component.html',
   styleUrls: ['./multiselect-dialog.component.scss']
 })

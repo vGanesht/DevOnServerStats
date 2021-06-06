@@ -6,7 +6,7 @@ import { HDD_SPEC_LIST, RAM_SPECS_LIST, STORAGE_DETAILS } from './filter-constan
 
 
 @Component({
-  selector: 'app-filters',
+  selector: 'lw-filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.scss']
 })

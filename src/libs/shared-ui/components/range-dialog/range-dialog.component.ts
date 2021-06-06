@@ -3,7 +3,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
 @Component({
-  selector: 'shared-range-dialog',
+  selector: 'lw-range-dialog',
   templateUrl: './range-dialog.component.html',
   styleUrls: ['./range-dialog.component.scss']
 })

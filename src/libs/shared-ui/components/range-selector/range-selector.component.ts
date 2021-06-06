@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RangeDialogComponent } from '../range-dialog/range-dialog.component';
 
 @Component({
-  selector: 'shared-range-selector',
+  selector: 'lw-range-selector',
   templateUrl: './range-selector.component.html',
   styleUrls: ['./range-selector.component.scss']
 })

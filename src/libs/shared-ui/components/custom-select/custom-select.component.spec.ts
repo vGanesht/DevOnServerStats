@@ -27,11 +27,11 @@ describe('CustomSelectComponent', () => {
   });
 });
 @Component({
-  template: `<shared-custom-select
+  template: `<lw-custom-select
       [label]="testLabel"
       [list]="testList"
       [selectedValue]="filterDetails?.hdd" >
-    </shared-custom-select>`
+    </lw-custom-select>`
 })
 export class RangeSelectorTestComponent{
   testLabel = 'Select Data';

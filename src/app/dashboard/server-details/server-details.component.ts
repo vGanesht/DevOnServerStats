@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { ServerDataService } from '../server-data.service';
 
 @Component({
-  selector: 'app-server-details',
+  selector: 'lw-server-details',
   templateUrl: './server-details.component.html',
   styleUrls: ['./server-details.component.scss']
 })

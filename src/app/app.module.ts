@@ -7,7 +7,6 @@ import { SharedModule } from 'src/libs/shared-ui/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { NotFoundErrorComponent } from '../libs/shared-ui/components/not-found-error/not-found-error.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

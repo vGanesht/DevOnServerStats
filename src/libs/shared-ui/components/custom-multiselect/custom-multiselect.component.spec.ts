@@ -34,10 +34,10 @@ describe('CustomMultiselectComponent', () => {
   });
 });
 @Component({
-  template: ` <shared-custom-multiselect
+  template: ` <lw-custom-multiselect
     [ramList]="testList"
     [selectedValue]="selectedValue">
-  </shared-custom-multiselect>`
+  </lw-custom-multiselect>`
 })
 export class TestComponent{
   testList = ['2GB', '4GB', '8GB', '12GB', '16GB', '24GB', '32GB', '48GB', '64GB', '96GB'];

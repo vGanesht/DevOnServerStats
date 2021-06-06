@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'shared-not-found-error',
+  selector: 'lw-not-found-error',
   templateUrl: './not-found-error.component.html',
   styleUrls: ['./not-found-error.component.scss']
 })

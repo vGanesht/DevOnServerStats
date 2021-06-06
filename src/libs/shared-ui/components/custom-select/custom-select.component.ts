@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, } from '@angular/core';
 
 @Component({
-  selector: 'shared-custom-select',
+  selector: 'lw-custom-select',
   templateUrl: './custom-select.component.html',
   styleUrls: ['./custom-select.component.scss']
 })

@@ -7,8 +7,6 @@ import { DashboardContainerComponent } from './dashboard-container/dashboard-con
 import { SharedModule } from 'src/libs/shared-ui/shared.module';
 import { FiltersComponent } from './filters/filters.component';
 
-
-
 @NgModule({
   declarations: [ServerDetailsComponent, DashboardContainerComponent, FiltersComponent],
   imports: [

@@ -5,10 +5,10 @@
     <div class="filter-list">
         <div>
             <mat-chip-list >
-                <shared-range-selector [storageDetails]="storageDetails" [selectedValue]="filterDetails?.storage" (selectedStorage)="handleSlider($event)" ></shared-range-selector>
-                <shared-custom-multiselect [ramList]="RAMList" [selectedValue]="filterDetails?.ram" (selectedRam)="handleRamChange($event)" ></shared-custom-multiselect>
-                <shared-custom-select [label]="'Select HDD'" [list]="HDDList" [selectedValue]="filterDetails?.hdd" (selected)="handleDropdownChange($event,'hdd')" ></shared-custom-select>
-                <shared-custom-select [label]="'Select Location'" [list]="locationList" [selectedValue]="filterDetails?.location" (selected)="handleDropdownChange($event,'location')" ></shared-custom-select>
+                <lw-range-selector [storageDetails]="storageDetails" [selectedValue]="filterDetails?.storage" (selectedStorage)="handleSlider($event)" ></lw-range-selector>
+                <lw-custom-multiselect [ramList]="RAMList" [selectedValue]="filterDetails?.ram" (selectedRam)="handleRamChange($event)" ></lw-custom-multiselect>
+                <lw-custom-select [label]="'Select HDD'" [list]="HDDList" [selectedValue]="filterDetails?.hdd" (selected)="handleDropdownChange($event,'hdd')" ></lw-custom-select>
+                <lw-custom-select [label]="'Select Location'" [list]="locationList" [selectedValue]="filterDetails?.location" (selected)="handleDropdownChange($event,'location')" ></lw-custom-select>
             </mat-chip-list>
         </div>
         <div>
