@@ -1,5 +1,6 @@
 table {
     width: 100%;
+    min-width:600px;
   }
 .form-container {
   margin:auto;
@@ -13,7 +14,11 @@ table {
 .table-container{
   padding-left:25px;
   padding-right:25px;
+  overflow:auto;
 }
 .filters{
   width:100%;
+}
+.mat-cell{
+  padding:5px;
 }
