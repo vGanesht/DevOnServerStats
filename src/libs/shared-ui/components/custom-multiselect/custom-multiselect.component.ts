@@ -16,8 +16,8 @@ export class CustomMultiselectComponent implements OnInit , OnChanges{
   constructor(public dialog: MatDialog) { }
 
   ngOnChanges(): void {
-
-    if (!this.selectedValue || this.selectedValue === '')
+    debugger;
+    if (!this.selectedValue || this.selectedValue.length === 0)
     {
       this.label = 'Select RAM';
     }
