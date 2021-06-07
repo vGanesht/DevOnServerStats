@@ -1,7 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HDD_SPEC_LIST, RAM_SPECS_LIST, STORAGE_DETAILS } from './filter-constants';
 
 

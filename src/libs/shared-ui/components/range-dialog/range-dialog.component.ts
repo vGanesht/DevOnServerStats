@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 
