@@ -22,4 +22,20 @@ describe('FiltersComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should update filter details when updateLocation is called', () => {
+    let location='AmsterdamAMS-01';
+    const updateFilter = spyOn(component, 'updateFilter');
+    component.updateLocation(location);
+    expect(updateFilter).toHaveBeenCalled();
+    expect(component.filterDetails.location).toEqual(location);
+  });
+
+  it('should update filter details when handleSlider is called', () => {
+    let hdd='2GB';
+    const updateFilter = spyOn(component, 'updateFilter');
+    component.updateHdd(hdd);
+    expect(updateFilter).toHaveBeenCalled();
+    expect(component.filterDetails.hdd).toEqual(hdd);
+  });
 });
