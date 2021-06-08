@@ -1,3 +1,13 @@
 mat-chip{
     width:150px;
 }
+
+.dialog-container{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.chip-label{
+    overflow: hidden;
+}
