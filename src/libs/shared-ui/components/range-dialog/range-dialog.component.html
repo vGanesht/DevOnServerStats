@@ -2,14 +2,14 @@
     <label class="text-bold">Storage : {{storage}}</label></h2>
 <div mat-dialog-content>
     <div class="slider">
-        min
+        {{storageDetails[0]}}
         <mat-slider
             step="100/storageDetails.length" 
             (input)="selectSlider($event.value)"
             [(ngModel)]="sliderValue"
             >
         </mat-slider>
-        max
+        {{storageDetails[storageDetails.length-1]}}
     </div>
  </div>
 <div mat-dialog-actions>
